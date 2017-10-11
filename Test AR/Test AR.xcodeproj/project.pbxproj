@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EA00A741F8E427F00AC7574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA00A731F8E427F00AC7574 /* AppDelegate.swift */; };
-		3EA00A761F8E427F00AC7574 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA00A751F8E427F00AC7574 /* art.scnassets */; };
-		3EA00A781F8E427F00AC7574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA00A771F8E427F00AC7574 /* ViewController.swift */; };
-		3EA00A7B1F8E427F00AC7574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA00A791F8E427F00AC7574 /* Main.storyboard */; };
-		3EA00A7D1F8E427F00AC7574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA00A7C1F8E427F00AC7574 /* Assets.xcassets */; };
-		3EA00A801F8E427F00AC7574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA00A7E1F8E427F00AC7574 /* LaunchScreen.storyboard */; };
+		3EA00A941F8E444E00AC7574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA00A931F8E444E00AC7574 /* AppDelegate.swift */; };
+		3EA00A961F8E444E00AC7574 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA00A951F8E444E00AC7574 /* art.scnassets */; };
+		3EA00A981F8E444E00AC7574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA00A971F8E444E00AC7574 /* ViewController.swift */; };
+		3EA00A9B1F8E444E00AC7574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA00A991F8E444E00AC7574 /* Main.storyboard */; };
+		3EA00A9D1F8E444E00AC7574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EA00A9C1F8E444E00AC7574 /* Assets.xcassets */; };
+		3EA00AA01F8E444E00AC7574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EA00A9E1F8E444E00AC7574 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EA00A701F8E427F00AC7574 /* Test AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EA00A731F8E427F00AC7574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3EA00A751F8E427F00AC7574 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		3EA00A771F8E427F00AC7574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3EA00A7A1F8E427F00AC7574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3EA00A7C1F8E427F00AC7574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3EA00A7F1F8E427F00AC7574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3EA00A811F8E427F00AC7574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EA00A901F8E444E00AC7574 /* Test AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EA00A931F8E444E00AC7574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3EA00A951F8E444E00AC7574 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		3EA00A971F8E444E00AC7574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3EA00A9A1F8E444E00AC7574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EA00A9C1F8E444E00AC7574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3EA00A9F1F8E444E00AC7574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3EA00AA11F8E444E00AC7574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3EA00A6D1F8E427F00AC7574 /* Frameworks */ = {
+		3EA00A8D1F8E444E00AC7574 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,32 +37,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3EA00A671F8E427E00AC7574 = {
+		3EA00A871F8E444E00AC7574 = {
 			isa = PBXGroup;
 			children = (
-				3EA00A721F8E427F00AC7574 /* Test AR */,
-				3EA00A711F8E427F00AC7574 /* Products */,
+				3EA00A921F8E444E00AC7574 /* Test AR */,
+				3EA00A911F8E444E00AC7574 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3EA00A711F8E427F00AC7574 /* Products */ = {
+		3EA00A911F8E444E00AC7574 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EA00A701F8E427F00AC7574 /* Test AR.app */,
+				3EA00A901F8E444E00AC7574 /* Test AR.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3EA00A721F8E427F00AC7574 /* Test AR */ = {
+		3EA00A921F8E444E00AC7574 /* Test AR */ = {
 			isa = PBXGroup;
 			children = (
-				3EA00A731F8E427F00AC7574 /* AppDelegate.swift */,
-				3EA00A751F8E427F00AC7574 /* art.scnassets */,
-				3EA00A771F8E427F00AC7574 /* ViewController.swift */,
-				3EA00A791F8E427F00AC7574 /* Main.storyboard */,
-				3EA00A7C1F8E427F00AC7574 /* Assets.xcassets */,
-				3EA00A7E1F8E427F00AC7574 /* LaunchScreen.storyboard */,
-				3EA00A811F8E427F00AC7574 /* Info.plist */,
+				3EA00A931F8E444E00AC7574 /* AppDelegate.swift */,
+				3EA00A951F8E444E00AC7574 /* art.scnassets */,
+				3EA00A971F8E444E00AC7574 /* ViewController.swift */,
+				3EA00A991F8E444E00AC7574 /* Main.storyboard */,
+				3EA00A9C1F8E444E00AC7574 /* Assets.xcassets */,
+				3EA00A9E1F8E444E00AC7574 /* LaunchScreen.storyboard */,
+				3EA00AA11F8E444E00AC7574 /* Info.plist */,
 			);
 			path = "Test AR";
 			sourceTree = "<group>";
@@ -70,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3EA00A6F1F8E427F00AC7574 /* Test AR */ = {
+		3EA00A8F1F8E444E00AC7574 /* Test AR */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EA00A841F8E427F00AC7574 /* Build configuration list for PBXNativeTarget "Test AR" */;
+			buildConfigurationList = 3EA00AA41F8E444E00AC7574 /* Build configuration list for PBXNativeTarget "Test AR" */;
 			buildPhases = (
-				3EA00A6C1F8E427F00AC7574 /* Sources */,
-				3EA00A6D1F8E427F00AC7574 /* Frameworks */,
-				3EA00A6E1F8E427F00AC7574 /* Resources */,
+				3EA00A8C1F8E444E00AC7574 /* Sources */,
+				3EA00A8D1F8E444E00AC7574 /* Frameworks */,
+				3EA00A8E1F8E444E00AC7574 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,26 +84,26 @@
 			);
 			name = "Test AR";
 			productName = "Test AR";
-			productReference = 3EA00A701F8E427F00AC7574 /* Test AR.app */;
+			productReference = 3EA00A901F8E444E00AC7574 /* Test AR.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3EA00A681F8E427E00AC7574 /* Project object */ = {
+		3EA00A881F8E444E00AC7574 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Human Tech";
 				TargetAttributes = {
-					3EA00A6F1F8E427F00AC7574 = {
+					3EA00A8F1F8E444E00AC7574 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 3EA00A6B1F8E427E00AC7574 /* Build configuration list for PBXProject "Test AR" */;
+			buildConfigurationList = 3EA00A8B1F8E444E00AC7574 /* Build configuration list for PBXProject "Test AR" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,55 +111,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 3EA00A671F8E427E00AC7574;
-			productRefGroup = 3EA00A711F8E427F00AC7574 /* Products */;
+			mainGroup = 3EA00A871F8E444E00AC7574;
+			productRefGroup = 3EA00A911F8E444E00AC7574 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EA00A6F1F8E427F00AC7574 /* Test AR */,
+				3EA00A8F1F8E444E00AC7574 /* Test AR */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3EA00A6E1F8E427F00AC7574 /* Resources */ = {
+		3EA00A8E1F8E444E00AC7574 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EA00A761F8E427F00AC7574 /* art.scnassets in Resources */,
-				3EA00A801F8E427F00AC7574 /* LaunchScreen.storyboard in Resources */,
-				3EA00A7D1F8E427F00AC7574 /* Assets.xcassets in Resources */,
-				3EA00A7B1F8E427F00AC7574 /* Main.storyboard in Resources */,
+				3EA00A961F8E444E00AC7574 /* art.scnassets in Resources */,
+				3EA00AA01F8E444E00AC7574 /* LaunchScreen.storyboard in Resources */,
+				3EA00A9D1F8E444E00AC7574 /* Assets.xcassets in Resources */,
+				3EA00A9B1F8E444E00AC7574 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3EA00A6C1F8E427F00AC7574 /* Sources */ = {
+		3EA00A8C1F8E444E00AC7574 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EA00A781F8E427F00AC7574 /* ViewController.swift in Sources */,
-				3EA00A741F8E427F00AC7574 /* AppDelegate.swift in Sources */,
+				3EA00A981F8E444E00AC7574 /* ViewController.swift in Sources */,
+				3EA00A941F8E444E00AC7574 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3EA00A791F8E427F00AC7574 /* Main.storyboard */ = {
+		3EA00A991F8E444E00AC7574 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3EA00A7A1F8E427F00AC7574 /* Base */,
+				3EA00A9A1F8E444E00AC7574 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		3EA00A7E1F8E427F00AC7574 /* LaunchScreen.storyboard */ = {
+		3EA00A9E1F8E444E00AC7574 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3EA00A7F1F8E427F00AC7574 /* Base */,
+				3EA00A9F1F8E444E00AC7574 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		3EA00A821F8E427F00AC7574 /* Debug */ = {
+		3EA00AA21F8E444E00AC7574 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -224,7 +224,7 @@
 			};
 			name = Debug;
 		};
-		3EA00A831F8E427F00AC7574 /* Release */ = {
+		3EA00AA31F8E444E00AC7574 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -274,7 +274,7 @@
 			};
 			name = Release;
 		};
-		3EA00A851F8E427F00AC7574 /* Debug */ = {
+		3EA00AA51F8E444E00AC7574 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -284,11 +284,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Human-Tech.Test-AR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
-		3EA00A861F8E427F00AC7574 /* Release */ = {
+		3EA00AA61F8E444E00AC7574 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -298,32 +298,32 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Human-Tech.Test-AR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EA00A6B1F8E427E00AC7574 /* Build configuration list for PBXProject "Test AR" */ = {
+		3EA00A8B1F8E444E00AC7574 /* Build configuration list for PBXProject "Test AR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3EA00A821F8E427F00AC7574 /* Debug */,
-				3EA00A831F8E427F00AC7574 /* Release */,
+				3EA00AA21F8E444E00AC7574 /* Debug */,
+				3EA00AA31F8E444E00AC7574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EA00A841F8E427F00AC7574 /* Build configuration list for PBXNativeTarget "Test AR" */ = {
+		3EA00AA41F8E444E00AC7574 /* Build configuration list for PBXNativeTarget "Test AR" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3EA00A851F8E427F00AC7574 /* Debug */,
-				3EA00A861F8E427F00AC7574 /* Release */,
+				3EA00AA51F8E444E00AC7574 /* Debug */,
+				3EA00AA61F8E444E00AC7574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3EA00A681F8E427E00AC7574 /* Project object */;
+	rootObject = 3EA00A881F8E444E00AC7574 /* Project object */;
 }
