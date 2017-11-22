@@ -9,13 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var countClick = 0
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnClic: UIButton!
     @IBAction func btnAction(_ sender: UIButton) {
-        lblTitle.text = "Btn clic"
+        lblTitle.text = "Click"+String(countClick)
+        countClick = countClick + 1
         lblTitle.sizeToFit()
-        
     }
     
     override func viewDidLoad() {

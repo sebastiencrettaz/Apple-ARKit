@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  TestHelloWorld
+//  TestImageDisplay
 //
-//  Created by Lin on 13.10.17.
+//  Created by Lin on 18.10.17.
 //  Copyright © 2017 Human Tech. All rights reserved.
 //
 
@@ -16,23 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let START = "APP LAUNCHED !"
-        
-        print(START)
-        
-        for a in [0,1,2,3,4,5] {
-            print(a)
-        }
-        
-        thisIsATestFunc()
-        
         return true
-    }
-    
-    func thisIsATestFunc() -> Int{
-        print("Test function is ok")
-        return 0
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -55,7 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        print("END APP")
     }
 
 
