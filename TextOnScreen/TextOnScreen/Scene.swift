@@ -56,6 +56,8 @@ class Scene: SKScene {
             var translation = matrix_identity_float4x4
             translation.columns.3.z = -0.2-Float(distance)
             let transform = simd_mul(currentFrame.camera.transform, translation)
+            print(transform)
+            
             
             // Add a new anchor to the session
             let anchor = ARAnchor(transform: transform)
