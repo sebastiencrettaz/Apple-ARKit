@@ -53,6 +53,7 @@ class Scene: SKScene {
                             self.prediction = classifications.components(separatedBy: "- ")[1]
                             Scene.objectName = classifications.components(separatedBy: "-")[0]
                             Scene.objectName = Scene.objectName.components(separatedBy: ",")[0]
+                            predictionFloat = (self.prediction as NSString).doubleValue
                             
                             //print(result.identifier)
                         }
@@ -62,15 +63,15 @@ class Scene: SKScene {
                     try handler.perform([request])
                 } catch {}
                 
-                predictionFloat = (self.prediction as NSString).doubleValue
-                print(self.prediction)
+                
+                //print(self.prediction)
                 
                 if(predictionFloat > 0.5 && self.latestPrediction != Scene.objectName){
                     // Create a transform with a translation of 0.2 meters in front of the camera
                     var translation = matrix_identity_float4x4
                     translation.columns.3.z = -0.4
                     let transform = simd_mul(currentFrame.camera.transform, translation)
-                    print(translation)
+                    //print(translation)
                     
                     // Add a new anchor to the session
                     let anchor = ARAnchor(transform: transform)
