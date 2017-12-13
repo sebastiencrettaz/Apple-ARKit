@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  PaperjamRemove
 //
-//  Created by Lin on 04.12.17.
+//  Created by Sébastien Crettaz on 04.12.17.
 //  Copyright © 2017 Human Tech. All rights reserved.
 //
 

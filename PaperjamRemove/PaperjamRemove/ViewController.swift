@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  PaperjamRemove
 //
-//  Created by Lin on 04.12.17.
+//  Created by Sébastien Crettaz on 04.12.17.
 //  Copyright © 2017 Human Tech. All rights reserved.
 //
 
@@ -37,6 +37,7 @@ class ViewController: UIViewController, ARSKViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -56,13 +57,29 @@ class ViewController: UIViewController, ARSKViewDelegate {
     
     // MARK: - ARSKViewDelegate
     func view(_ view: ARSKView, nodeFor anchor: ARAnchor) -> SKNode? {
-        // Create and configure a node for the anchor added to the view's session.
-        let labelNode = SKLabelNode(text: Scene.displayName)
-        labelNode.horizontalAlignmentMode = .center
-        labelNode.verticalAlignmentMode = .center
-        //print(view)
+        // Create a node that will contains the label and the circle
+        let node = SKNode()
         
-        return labelNode;
+        // Create the label displaying the text
+        let labelNode = SKLabelNode(text: Scene.displayName)
+        labelNode.fontName = "AppleSDGothicNeo-Bold"
+        labelNode.fontColor = UIColor.orange
+        labelNode.position = CGPoint(x : 0, y : 0)
+
+        // Create the circle to put under the label
+        let Circle = SKShapeNode(circleOfRadius: 10 ) // Size of Circle
+        Circle.strokeColor = UIColor.black
+        Circle.glowWidth = 1.0
+        Circle.fillColor = UIColor.orange
+        
+        // Put the circle under the label
+        Circle.position = CGPoint(x : 0, y : -20)
+        
+        // Add the label and the Circle to the node
+        node.addChild(labelNode)
+        node.addChild(Circle)
+        
+        return node;
     }
     
     

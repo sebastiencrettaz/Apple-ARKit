@@ -2,7 +2,7 @@
 //  Scene.swift
 //  PaperjamRemove
 //
-//  Created by Stooby on 04.12.17.
+//  Created by Sébastien Crettaz on 04.12.17.
 //  Copyright © 2017 Human Tech. All rights reserved.
 //
 
@@ -49,12 +49,6 @@ class Scene: SKScene {
         }
         var predictionFloat : Double = 0.0 // variable to cast the prediction var
         
-        // Variable used to find position of the object
-        //var position = CGPoint(x:0,y:0)
-        
-        //position.x = self.sceneView.bounds.midX
-        //position.y = self.sceneView.bounds.midY
-        
         if let currentFrame = sceneView.session.currentFrame {
             DispatchQueue.global(qos: .background).async {
                 do {
@@ -63,8 +57,6 @@ class Scene: SKScene {
                         // Jump onto the main thread
                         DispatchQueue.main.async {
                             var prediction:String = "…" // variable containing the level of prediction
-                            
-                            
                             
                             // Access the first result in the array after casting the array as a VNClassificationObservation array
                             guard let results = request.results as? [VNClassificationObservation] else {
@@ -95,133 +87,28 @@ class Scene: SKScene {
                 } catch {}
                 
                 
-                //print(self.objectName)
-                
+                //Add anchor if prediction is bigger than 0.5
                 if(predictionFloat > 0.5 && self.latestPrediction != self.objectName){
-                    // Update last object found
-                    self.latestPrediction = self.objectName
-                    //print(self.state)
                     
-                    // Choice of text to display from the states
-                    switch self.state {
-                    case 0 :
-                        self.state = 1
-                        return
-                    case 1 :
-                        if(self.latestPrediction == "CurveClosed "){
-                            Scene.displayName = "Open it"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 2 :
-                        if(self.latestPrediction == "CurveOpen "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Go right..."
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 3 :
-                        if(self.latestPrediction == "ChargerClosed "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Rise up"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 4 :
-                        if(self.latestPrediction == "ChargerOpen "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Go back from printer"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 5 :
-                        if(self.latestPrediction == "ADFClosed "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Open scanner"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 6 :
-                        if(self.latestPrediction == "ADFOpen "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Open DF1 (green)"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 7 :
-                        if(self.latestPrediction == "DF1Closed "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Pull DF1"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 8 :
-                        if(self.latestPrediction == "DF1Open "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Close DF1"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 9 :
-                        if(self.latestPrediction == "DF1Closed "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Close Scanner"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 10 :
-                        if(self.latestPrediction == "ADFClosed "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Close charger"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 11 :
-                        if(self.latestPrediction == "ChargerClosed "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "Close curve"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 12 :
-                        if(self.latestPrediction == "CurveClosed "){
-                            sceneView.session.remove(anchor: self.oldAnchor!)
-                            Scene.displayName = "END FIXING PRINTER !"
-                            self.state = self.state+1
-                        }else{
-                            return
-                        }
-                        break
-                    case 13 :
-                        self.state = 0
-                        return
-                    default:
+                    // get if the object is detected
+                    let removeAnchor = self.stateText()
+                    
+                    // remove the old anchor
+                    if self.oldAnchor != nil && removeAnchor{
+                        sceneView.session.remove(anchor: self.oldAnchor!)
+                    }
+                    
+                    // If the object isn't found on the screen, we don't add an anchor
+                    if(!removeAnchor){
                         return
                     }
                     
-                    // Create a transform with a translation of 0.2 meters in front of the camera
+                    //var dist : CGFloat = 0.0
+                    
+                    //for result in sceneView.hitTest(CGPoint(x: 0.5, y: 0.5), types: [.existingPlaneUsingExtent, .featurePoint]) {
+                        //dist = result.distance
+                    //}
+                    // Create a transform with a translation of 0.4 meters in front of the camera
                     var translation = matrix_identity_float4x4
                     translation.columns.3.z = -0.4
                     let transform = simd_mul(currentFrame.camera.transform, translation)
@@ -233,9 +120,133 @@ class Scene: SKScene {
                     // Set the identifier
                     self.oldAnchor = anchor
                     sceneView.session.add(anchor: anchor)
-                    
                 }
             }
+        }
+    }
+    
+    // Function stateText
+    // Choose text to display from the states
+    // Return : true if object found and can go to next step
+    func stateText() -> Bool{
+        // Update last object found
+        self.latestPrediction = self.objectName
+        
+        // Remove whitespace in the prediction
+        self.latestPrediction = self.latestPrediction.trimmingCharacters(in: .whitespaces)
+        
+        // Choice of text to display from the states
+        switch self.state {
+        case 0 :
+            self.state = 1
+            //Scene.displayName = "Go to curve, left from charger"
+            return false
+        case 1 :
+            if(self.latestPrediction == "CurveClosed"){
+                Scene.displayName = "Open it"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 2 :
+            if(self.latestPrediction == "CurveOpen"){
+                Scene.displayName = "Go right..."
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 3 :
+            if(self.latestPrediction == "ChargerClosed"){
+                Scene.displayName = "Rise up"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 4 :
+            if(self.latestPrediction == "ChargerOpen"){
+                Scene.displayName = "Go back to show the closed scanner"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 5 :
+            if(self.latestPrediction == "ADFClosed"){
+                Scene.displayName = "Open scanner"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 6 :
+            if(self.latestPrediction == "ADFOpen"){
+                Scene.displayName = "Find DF1 (green)"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 7 :
+            if(self.latestPrediction == "DF1Closed"){
+                Scene.displayName = "Pull DF1"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 8 :
+            if(self.latestPrediction == "DF1Open"){
+                Scene.displayName = "Close DF1 (Show DF1 button)"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 9 :
+            if(self.latestPrediction == "DF1Closed"){
+                Scene.displayName = "Close Scanner"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 10 :
+            if(self.latestPrediction == "ADFClosed"){
+                Scene.displayName = "Close charger"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 11 :
+            if(self.latestPrediction == "ChargerClosed"){
+                Scene.displayName = "Close curve"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        case 12 :
+            if(self.latestPrediction == "CurveClosed"){
+                Scene.displayName = "END FIXING PRINTER !"
+                self.state = self.state+1
+            }else{
+                return false
+            }
+            return true
+        default:
+            return false
+        }
+    }
+    
+    // Function touchesBegan
+    // Used if the user want to restart the debugging of the printer when the debugging is done
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if(self.state == 13){
+            self.state = 0
         }
     }
 }
