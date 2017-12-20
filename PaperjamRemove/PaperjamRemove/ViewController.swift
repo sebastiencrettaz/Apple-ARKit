@@ -19,6 +19,19 @@ class ViewController: UIViewController, ARSKViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let button = UIButton();
+        button.setTitle("Printer fixed", for: .normal)
+        button.setTitleColor(UIColor.red, for: .normal)
+        button.titleLabel!.font =  UIFont(name: "HelveticaNeue-Bold", size: 30)
+        button.addTarget(self, action: #selector(doSomething(sender:)), for: .touchUpInside)
+        
+        var screenHeight: CGFloat {
+            return UIScreen.main.bounds.height
+        }
+
+        button.frame = CGRect(x: 20.0, y: screenHeight-50.0, width: 200, height: 50)
+        self.view.addSubview(button)
+        
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -37,7 +50,6 @@ class ViewController: UIViewController, ARSKViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .horizontal
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -82,19 +94,8 @@ class ViewController: UIViewController, ARSKViewDelegate {
         return node;
     }
     
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-        
-    }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
+    @objc private func doSomething(sender: UIButton){
+        Scene.state = 11
+        Scene.end = true
     }
 }
