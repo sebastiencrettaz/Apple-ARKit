@@ -20,27 +20,34 @@ class ViewController: UIViewController, ARSKViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Force app to launch in landscape orientation
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        
+        // Get screen height
         var screenHeight: CGFloat {
             return UIScreen.main.bounds.height
         }
         
+        // Get screen width
         var screenWidth: CGFloat {
             return UIScreen.main.bounds.width
         }
         
+        // Create button if printer fixed before the end of the fixing
         let button = UIButton();
         button.setTitle("Printer fixed", for: .normal)
         button.setTitleColor(UIColor.red, for: .normal)
         button.titleLabel!.font =  UIFont(name: "HelveticaNeue-Bold", size: 30)
         button.addTarget(self, action: #selector(finishFix(sender:)), for: .touchUpInside)
+        button.frame = CGRect(x: 20.0, y: screenHeight-50.0, width: 200, height: 50)
         
-        
-        ViewController.imageView = UIImageView(frame:CGRect(x : screenWidth - 450.0,y: screenHeight-300.0 ,width : 450,height : 300));
+        // Create imageView to show user what he should do to repair the printer
+        ViewController.imageView = UIImageView(frame:CGRect(x : screenWidth - screenWidth*0.3,y: screenHeight-screenHeight*0.3 ,width : screenWidth*0.3 ,height : screenHeight*0.3));
         ViewController.imageView.layer.borderWidth = 2
         ViewController.imageView.image = UIImage(named:"HumanTechLogo.png")
+        
+        // Add button and viewController to the view
         self.view.addSubview(ViewController.imageView)
-
-        button.frame = CGRect(x: 20.0, y: screenHeight-50.0, width: 200, height: 50)
         self.view.addSubview(button)
         
         // Set the view's delegate
@@ -54,6 +61,11 @@ class ViewController: UIViewController, ARSKViewDelegate {
         if let scene = SKScene(fileNamed: "Scene") {
             sceneView.presentScene(scene)
         }
+    }
+    
+    // Force app to run in landscape mode
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask(rawValue: UInt(UIInterfaceOrientationMask.landscapeRight.rawValue))
     }
     
     override func viewWillAppear(_ animated: Bool) {
