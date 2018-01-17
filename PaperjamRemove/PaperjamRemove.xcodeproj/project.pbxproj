@@ -15,6 +15,7 @@
 		3E176F621FD5E4DE00EF5A29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E176F611FD5E4DE00EF5A29 /* Assets.xcassets */; };
 		3E176F651FD5E4DE00EF5A29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E176F631FD5E4DE00EF5A29 /* LaunchScreen.storyboard */; };
 		3E176F6D1FD5E68D00EF5A29 /* MyModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 3E176F6C1FD5E68400EF5A29 /* MyModel.mlmodel */; };
+		3E638360200F461100CEF731 /* ImageViewer in Resources */ = {isa = PBXBuildFile; fileRef = 3E63835F200F37BF00CEF731 /* ImageViewer */; };
 		3E6D551C1FE1385F002C14F5 /* HumanTechLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E6D551B1FE1385C002C14F5 /* HumanTechLogo.png */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		3E176F641FD5E4DE00EF5A29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E176F661FD5E4DE00EF5A29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E176F6C1FD5E68400EF5A29 /* MyModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyModel.mlmodel; sourceTree = "<group>"; };
+		3E63835F200F37BF00CEF731 /* ImageViewer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImageViewer; sourceTree = "<group>"; };
 		3E6D551B1FE1385C002C14F5 /* HumanTechLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HumanTechLogo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +64,7 @@
 		3E176F551FD5E4DE00EF5A29 /* PaperjamRemove */ = {
 			isa = PBXGroup;
 			children = (
+				3E63835F200F37BF00CEF731 /* ImageViewer */,
 				3E6D551B1FE1385C002C14F5 /* HumanTechLogo.png */,
 				3E176F561FD5E4DE00EF5A29 /* AppDelegate.swift */,
 				3E176F581FD5E4DE00EF5A29 /* Scene.sks */,
@@ -139,6 +142,7 @@
 				3E176F651FD5E4DE00EF5A29 /* LaunchScreen.storyboard in Resources */,
 				3E176F621FD5E4DE00EF5A29 /* Assets.xcassets in Resources */,
 				3E176F601FD5E4DE00EF5A29 /* Main.storyboard in Resources */,
+				3E638360200F461100CEF731 /* ImageViewer in Resources */,
 				3E6D551C1FE1385F002C14F5 /* HumanTechLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

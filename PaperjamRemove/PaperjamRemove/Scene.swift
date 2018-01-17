@@ -17,19 +17,20 @@ class Scene: SKScene {
     var oldAnchor : ARAnchor? = nil             // variable containing the actual node displayed on the screen. Used to remove it when
                                                 // the app goes to the next state
     static var state : Int = 0                  // variable containing the actual state of the fixing
-    var timeStart : Double = 0.0
-    var time : Double = 0.0
-    var initialize : Bool = true
-    static var end : Bool = false
+    var timeStart : Double = 0.0                // time when the app begins
+    var time : Double = 0.0                     // actual time
+    var initialize : Bool = true                // variable containing if the app is in init state
+    static var end : Bool = false               // variable containing if the app is in end state
     
-    let debugLabel = SKLabelNode(text: "State")
+    //let debugLabel = SKLabelNode(text: "State") // Label to show informations for debugging
     
     override func didMove(to view: SKView) {
-        debugLabel.position = CGPoint(x:450,y:480)
-        debugLabel.fontSize = 20
-        debugLabel.fontName = "DevanagariSangamMN-Bold"
-        debugLabel.fontColor = UIColor.green
-        addChild(debugLabel)
+        //debugLabel.position = CGPoint(x:450,y:480)
+        //debugLabel.fontSize = 20
+        //debugLabel.fontName = "DevanagariSangamMN-Bold"
+        //debugLabel.fontColor = UIColor.green
+    
+        //addChild(debugLabel)
         // Setup your scene here
     }
     
@@ -72,9 +73,9 @@ class Scene: SKScene {
                             self.objectName = self.objectName.components(separatedBy: ",")[0]
                             predictionFloat = (prediction as NSString).doubleValue
                             
-                            self.debugLabel.text = String(format:"%d",Scene.state)
-                            self.debugLabel.text = self.debugLabel.text! + self.objectName
-                            self.debugLabel.text = self.debugLabel.text! + String(format:"%f",predictionFloat)
+                            //self.debugLabel.text = String(format:"%d",Scene.state)
+                            //self.debugLabel.text = self.debugLabel.text! + self.objectName
+                            //self.debugLabel.text = self.debugLabel.text! + String(format:"%f",predictionFloat)
                             
                             //print(result.identifier)
                         }
@@ -126,6 +127,11 @@ class Scene: SKScene {
         
         // Remove space character in the prediction
         self.latestPrediction = self.latestPrediction.trimmingCharacters(in: .whitespaces)
+        
+        // Change image to help user
+        DispatchQueue.main.async {
+            ViewController.imageView.image = UIImage(named:"ImageViewer/\(Scene.state).JPG")
+        }
         
         // Choice of text to display from the states
         switch Scene.state {

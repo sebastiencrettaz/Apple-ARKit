@@ -15,19 +15,30 @@ import Vision
 class ViewController: UIViewController, ARSKViewDelegate {
     
     @IBOutlet var sceneView: ARSKView!
+    static var imageView : UIImageView!    // object used for displaying images to help fixing for user
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var screenHeight: CGFloat {
+            return UIScreen.main.bounds.height
+        }
+        
+        var screenWidth: CGFloat {
+            return UIScreen.main.bounds.width
+        }
         
         let button = UIButton();
         button.setTitle("Printer fixed", for: .normal)
         button.setTitleColor(UIColor.red, for: .normal)
         button.titleLabel!.font =  UIFont(name: "HelveticaNeue-Bold", size: 30)
-        button.addTarget(self, action: #selector(doSomething(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(finishFix(sender:)), for: .touchUpInside)
         
-        var screenHeight: CGFloat {
-            return UIScreen.main.bounds.height
-        }
+        
+        ViewController.imageView = UIImageView(frame:CGRect(x : screenWidth - 450.0,y: screenHeight-300.0 ,width : 450,height : 300));
+        ViewController.imageView.layer.borderWidth = 2
+        ViewController.imageView.image = UIImage(named:"HumanTechLogo.png")
+        self.view.addSubview(ViewController.imageView)
 
         button.frame = CGRect(x: 20.0, y: screenHeight-50.0, width: 200, height: 50)
         self.view.addSubview(button)
@@ -75,14 +86,14 @@ class ViewController: UIViewController, ARSKViewDelegate {
         // Create the label displaying the text
         let labelNode = SKLabelNode(text: Scene.displayName)
         labelNode.fontName = "AppleSDGothicNeo-Bold"
-        labelNode.fontColor = UIColor.orange
+        labelNode.fontColor = UIColor.green
         labelNode.position = CGPoint(x : 0, y : 0)
 
         // Create the circle to put under the label
         let Circle = SKShapeNode(circleOfRadius: 10 ) // Size of Circle
         Circle.strokeColor = UIColor.black
         Circle.glowWidth = 1.0
-        Circle.fillColor = UIColor.orange
+        Circle.fillColor = UIColor.green
         
         // Put the circle under the label
         Circle.position = CGPoint(x : 0, y : -20)
@@ -94,7 +105,7 @@ class ViewController: UIViewController, ARSKViewDelegate {
         return node;
     }
     
-    @objc private func doSomething(sender: UIButton){
+    @objc private func finishFix(sender: UIButton){
         Scene.state = 11
         Scene.end = true
     }
