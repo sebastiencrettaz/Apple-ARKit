@@ -20,7 +20,6 @@ class Scene: SKScene {
     var timeStart : Double = 0.0                // time when the app begins
     var time : Double = 0.0                     // actual time
     var initialize : Bool = true                // variable containing if the app is in init state
-    static var end : Bool = false               // variable containing if the app is in end state
     
     //let debugLabel = SKLabelNode(text: "State") // Label to show informations for debugging
     
@@ -139,7 +138,6 @@ class Scene: SKScene {
             if(time > timeStart + 2.0){
                 Scene.state = 1
             }
-            Scene.end = false
             return false
         case 1 :
             if(self.latestPrediction == "CurveClosed"){
@@ -224,21 +222,35 @@ class Scene: SKScene {
             break
         case 10 :
             if(self.latestPrediction == "ChargerClosed"){
-                Scene.displayName = "Close curve"
+                Scene.displayName = "👈🏻 Go left"
                 Scene.state = Scene.state+1
             }else{
                 return false
             }
             break
         case 11 :
-            if(self.latestPrediction == "CurveClosed" || Scene.end){
+            if(self.latestPrediction == "CurveOpen"){
+                Scene.displayName = "Close curve"
+                Scene.state = Scene.state+1
+            }else if(self.latestPrediction == "CurveClosed"){
+                    Scene.state = Scene.state+1
+                    return false
+            }else{
+                return false
+            }
+            break
+        case 12 :
+            if(self.latestPrediction == "CurveClosed"){
                 Scene.displayName = "END FIXING PRINTER !"
                 Scene.state = Scene.state+1
             }else{
                 return false
             }
             break
+        case 13 :
+            return false
         default:
+            Scene.state = 0;
             return false
         }
         return true
@@ -247,7 +259,7 @@ class Scene: SKScene {
     // Function touchesBegan
     // Used if the user want to restart the debugging of the printer when the debugging is done
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if(Scene.state == 12){
+        if(Scene.state == 13){
             Scene.state = 0
         }
     }

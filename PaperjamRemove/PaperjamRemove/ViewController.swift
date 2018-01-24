@@ -118,7 +118,9 @@ class ViewController: UIViewController, ARSKViewDelegate {
     }
     
     @objc private func finishFix(sender: UIButton){
-        Scene.state = 11
-        Scene.end = true
+        // Depends on the state, the user must close parts he has already opened
+        if(Scene.state-1 < 5){
+            Scene.state = 13-(Scene.state-1)
+        }
     }
 }
